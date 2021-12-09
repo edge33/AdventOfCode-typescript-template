@@ -12,7 +12,7 @@ const day = args[0];
 if (!day) {
   console.log('Please run with the day to bootstrap, i.e. npm run init-day 1');
 }
-console.log(`creating template for day ${2}`);
+console.log(`creating template for day ${day}`);
 const basePath = 'src/days';
 
 if (existsSync(`src/days/${day}`)) {
