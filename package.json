@@ -4,11 +4,11 @@
   "description": "Boilerplate workspace for advent of code puzzle",
   "main": "index.ts",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "bun src/index.ts",
     "build": "rm -rf dist && tsc",
     "test": "vitest",
     "start": "node dist/index.js",
-    "init-day": "ts-node src/scripts/initNewDay/initNewDay.ts",
+    "init-day": "bun src/scripts/initNewDay/initNewDay.ts",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
   },
@@ -20,9 +20,7 @@
     "@typescript-eslint/parser": "^6.13.1",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
-    "nodemon": "^3.0.1",
     "prettier": "^3.1.0",
-    "ts-node": "^10.9.1",
     "typescript": "^5.3.2",
     "vitest": "^0.34.6"
   }
