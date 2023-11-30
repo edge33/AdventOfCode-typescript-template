@@ -1,6 +1,7 @@
 import { readdirSync } from 'fs';
-import { PuzzleInterface } from './types/PuzzleInterface';
-import PuzzleFactory from './utils/PuzzleFactory';
+import { describe, expect, it } from 'vitest';
+import readFile from './utils/readFile';
+import Puzzle from './types/Puzzle';
 
 describe('AoC test runner', () => {
   const dirs = readdirSync('./src/days', { withFileTypes: true })
@@ -9,9 +10,24 @@ describe('AoC test runner', () => {
 
   for (const day of dirs) {
     it(`Tests day ${day}`, async () => {
-      const puzzle: PuzzleInterface = await PuzzleFactory.getPuzzle(day);
-      expect(puzzle.solveFirst()).toEqual(puzzle.getFirstExpectedResult());
-      expect(puzzle.solveSecond()).toEqual(puzzle.getSecondExpectedResult());
+      let input = '';
+      const puzzleName = day;
+      try {
+        const puzzlePath = `src/days/${puzzleName}`;
+        input = await readFile(`${puzzlePath}/input.txt`);
+      } catch (error) {
+        console.error(error);
+        process.exit(1);
+      }
+      const {
+        first,
+        expectedFirstSolution,
+        second,
+        expectedSecondSolution,
+      }: Puzzle = await import(`./days/${puzzleName}/Puzzle`);
+
+      expect(first(input)).toBe(expectedFirstSolution);
+      expect(second(input)).toBe(expectedSecondSolution);
     });
   }
 });

@@ -1,4 +1,5 @@
-import PuzzleFactory from './utils/PuzzleFactory';
+import type Puzzle from './types/Puzzle';
+import readFile from './utils/readFile';
 
 const args = process.argv.slice(2);
 const dayToSolve = args[0];
@@ -9,7 +10,17 @@ if (!dayToSolve) {
 }
 console.log(`Solving Day #${args[0]}`);
 (async () => {
-  const puzzle = await PuzzleFactory.getPuzzle(args[0]);
-  console.log(puzzle.solveFirst());
-  console.log(puzzle.solveSecond());
+  let input = '';
+  const puzzleName = args[0];
+  try {
+    const puzzlePath = `src/days/${puzzleName}`;
+    input = await readFile(`${puzzlePath}/input.txt`);
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+  const { first, second }: Puzzle = await import(`./days/${puzzleName}/Puzzle`);
+
+  console.log(first(input));
+  console.log(second(input));
 })();

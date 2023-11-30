@@ -4,28 +4,24 @@
   "description": "Boilerplate workspace for advent of code puzzle",
   "main": "index.ts",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "bun src/index.ts",
     "build": "rm -rf dist && tsc",
-    "test": "jest",
+    "test": "vitest",
     "start": "node dist/index.js",
-    "init-day": "ts-node src/scripts/initNewDay/initNewDay.ts",
+    "init-day": "bun src/scripts/initNewDay/initNewDay.ts",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
   },
   "author": "Francesco Maida",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^27.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.5.0",
-    "@typescript-eslint/parser": "^5.5.0",
-    "eslint": "^8.3.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-jest": "^25.3.0",
-    "jest": "^27.4.2",
-    "nodemon": "^2.0.15",
-    "prettier": "^2.5.0",
-    "ts-jest": "^27.0.7",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.2"
+    "@types/node": "^20.10.1",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.2",
+    "vitest": "^0.34.6"
   }
 }
