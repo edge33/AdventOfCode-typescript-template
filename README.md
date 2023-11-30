@@ -16,74 +16,48 @@ src
 
 ## 🚀 Getting started
 
-install all required dependencies with `npm i`
+This readme assumes you are using [pnpm](https://pnpm.io/) as package manager, but any other package manager will do.
+
+install all required dependencies with `pnpm i`
 
 ## 🎄 Adding a new puzzle
 
-when the new AoC puzzle is available run `npm run init-day {day}`
+when the new AoC puzzle is available run `pnpm init-day {day}`
 
-replace `{day}` with the number of the advent day, i.e. `npm run init-day 2`.
+replace `{day}` with the number of the advent day, i.e. `pnpm init-day 2`.
 
 This command will create a new directory in the `days` folder with the following content
 
-- `Puzzle.ts`: the boilerplate class with the placeholder methods for solving both daily puzzles
+- `Puzzle.ts`: the boilerplate module with the placeholder methods for solving both daily puzzles
 - `index.txt`: the input file where to add the puzzle input
 
-The structure of the boilerplate class is the following:
+The structure of the boilerplate module is the following:
 
 ```typescript
-import Puzzle from '../../types/AbstractPuzzle';
+const first = (input: string) => {
+  console.log(input);
+  return 'solution 1';
+};
 
-export default class ConcretePuzzle extends Puzzle {
-  public solveFirst(): string {
-    /*
-     *
-     * HERE GOES THE SOLUTION FOR THE FIRST PUZZLE
-     *
-     */
-    return 'day 1 solution 1';
-  }
+const expectedFirstSolution = 'solution 1';
 
-  public getFirstExpectedResult(): string {
-    /*
-     *
-     * RETURN THE EXPECTED SOLUTION FOR THE FIRST TEST INPUT
-     * USEFULL FOR TEST RUNNING
-     *
-     */
-    return 'day 1 solution 1';
-  }
+const second = (input: string) => {
+  console.log(input);
+  return 'solution 2';
+};
 
-  public solveSecond(): string {
-    /*
-     *
-     * HERE GOES THE SOLUTION FOR THE SECOND PUZZLE
-     *
-     */
-    return 'day 1 solution 2';
-  }
+const expectedSecondSolution = 'solution 2';
 
-  public getSecondExpectedResult(): string {
-    /*
-     *
-     * RETURN THE EXPECTED SOLUTION FOR THE SECOND TEST INPUT
-     * USEFULL FOR TEST RUNNING
-     *
-     */
-    return 'day 1 solution 2';
-  }
-}
+export { first, expectedFirstSolution, second, expectedSecondSolution };
 ```
-
-in each method of the class you can access the test input with `this.input`
 
 ## 🔧 Development
 
-When your solution is ready, or when you want to start developing incrementally run `npm run dev {day}` where {day} is the day you are working on, i.e. `npm run dev 1` will run the puzzle class for day 1.
+When your solution is ready, or when you want to start developing incrementally (watch mode) run `pnpm dev {day}` where {day} is the day you are working on, i.e. `pnpm dev 1` will run the puzzle class for day 1.
 
 ## 🧪 Testing
 
-You can ran test for all puzzles agains their expected output with `npm t` this will test all the solutions in the `days` folder
+You can run test for all puzzles agains their expected output with `pnpm t` this will test all the solutions in the `days` folder
 
 ## 🛫 Contributing
 

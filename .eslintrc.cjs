@@ -4,7 +4,7 @@ module.exports = {
   },
   root: true,
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'eslint-plugin-jest'],
+  plugins: ['@typescript-eslint'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -70,14 +70,8 @@ module.exports = {
     'space-before-function-paren': 'off',
     'prefer-template': 'error',
     'no-useless-concat': 'error',
-    'linebreak-style': ['error', 'unix'],
     'eol-last': ['error', 'always'],
     'template-curly-spacing': ['error', 'never'],
     'no-multiple-empty-lines': 'off',
-    'jest/no-disabled-tests': 'warn',
-    'jest/no-focused-tests': 'error',
-    'jest/no-identical-title': 'error',
-    'jest/prefer-to-have-length': 'warn',
-    'jest/valid-expect': 'error',
   },
 };
