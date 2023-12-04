@@ -5,8 +5,6 @@ This is a TypeScript boilerplate for Advent of Code.
 built with ❤️ and:
 
 - [typescript](https://www.typescriptlang.org/) 👨‍💻
-- [vitest](https://vitest.dev/) 🧪
-- [bun](https://bun.sh/) 🧅
 
 ## 👷‍♂️ Project structure
 
@@ -23,8 +21,6 @@ src
 ## 🚀 Getting started
 
 This readme assumes you are using [pnpm](https://pnpm.io/) as package manager, but any other package manager will do.
-
-The runtime used for this project is bun [bun](https://bun.sh/), check the docs for installing it.
 
 install all required dependencies with `pnpm i`
 
