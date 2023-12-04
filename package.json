@@ -2,13 +2,14 @@
   "name": "advent-of-code-boilerplate",
   "version": "1.0.0",
   "description": "Boilerplate workspace for advent of code puzzle",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "type": "module",
   "scripts": {
-    "dev": "bun src/index.ts",
+    "dev": "tsc -w & nodemon -q -w dist dist/index.js",
     "build": "rm -rf dist && tsc",
-    "test": "vitest",
+    "test": "tsc && node --test dist/index.spec.js",
     "start": "node dist/index.js",
-    "init-day": "bun src/scripts/initNewDay/initNewDay.ts",
+    "init-day": "node ./src/scripts/initNewDay/initNewDay.js",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
   },
@@ -20,8 +21,8 @@
     "@typescript-eslint/parser": "^6.13.1",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
+    "nodemon": "^3.0.2",
     "prettier": "^3.1.0",
-    "typescript": "^5.3.2",
-    "vitest": "^0.34.6"
+    "typescript": "^5.3.2"
   }
 }

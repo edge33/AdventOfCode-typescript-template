@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "name": "nodemon",
+      "request": "launch",
+      "restart": true,
+      "args": ["1"],
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["dev", "1"],
+
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    }
+  ]
+}

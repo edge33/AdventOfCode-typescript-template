@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "NodeNext",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
-    "sourceMap": false,
-    "outDir": "dist"
+    "sourceMap": true,
+    "outDir": "dist",
+    "target": "ESNext",
+    "esModuleInterop": true,
+    "moduleResolution": "NodeNext",
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts", "src/scripts/**/*"]
+  "exclude": ["node_modules", "src/scripts/**/*"]
 }
