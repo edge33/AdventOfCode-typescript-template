@@ -1,4 +1,6 @@
 import { existsSync, copyFileSync, mkdirSync, writeFileSync } from 'fs';
+import * as url from 'url';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Creates the boilerplate code for a new puzzle
