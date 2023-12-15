@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "dev": "tsc -w & nodemon -q -w dist dist/index.js",
+    "compile-run": "tsc && node dist/index.js",
+    "dev": "nodemon -e ts  --exec \"pnpm compile-run\"",
     "build": "rm -rf dist && tsc",
     "test": "tsc && node --test dist/index.spec.js",
     "start": "node dist/index.js",
