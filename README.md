@@ -74,5 +74,7 @@ Every contribution is welcome. Just fork this repo and open a MR with your chang
 ## 👨👩 Contributors
 
 [Francesco Maida](https://edge33.github.io)
+
 [Devin Spikowski](https://github.com/vegeta897)
+
 [Nitish Thiyagarajan](https://www.tnitish.com)
