@@ -78,3 +78,5 @@ Every contribution is welcome. Just fork this repo and open a MR with your chang
 [Devin Spikowski](https://github.com/vegeta897)
 
 [Nitish Thiyagarajan](https://www.tnitish.com)
+
+[Michael Timpson](https://github.com/Mtimpson)
