@@ -37,7 +37,7 @@ replace `{day}` with the number of the advent day, i.e. `pnpm init-day 2`.
 This command will create a new directory in the `days` folder with the following content
 
 - `Puzzle.ts`: the boilerplate module with the placeholder methods for solving both daily puzzles
-- `index.txt`: the input file where to add the puzzle input
+- `input.txt`: the input file where to add the puzzle input
 
 The structure of the boilerplate module is the following:
 
