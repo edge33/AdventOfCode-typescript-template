@@ -28,8 +28,11 @@ describe('AoC test runner', () => {
         expectedSecondSolution,
       }: Puzzle = await import(`./days/${puzzleName}/Puzzle`);
 
-      expect(first(exampleOneInput)).toBe(expectedFirstSolution);
-      expect(second(exampleTwoInput)).toBe(expectedSecondSolution);
+      expect(first(exampleOneInput).toString()).toBe(
+        expectedFirstSolution.toString()
+      );
+      expect(second(exampleTwoInput).toString()).toBe(
+        expectedSecondSolution.toString()
     });
   }
 });
