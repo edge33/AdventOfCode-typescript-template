@@ -1,4 +1,4 @@
-import { existsSync, copyFileSync, mkdirSync, writeFileSync } from 'fs';
+import { copyFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 
 /**
  * Creates the boilerplate code for a new puzzle

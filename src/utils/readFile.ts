@@ -1,4 +1,4 @@
-import { readFile } from 'fs';
+import { readFile } from 'node:fs';
 
 export default (inputFilePath: string) => {
   return new Promise<string>((resolve, reject) => {

@@ -12,4 +12,4 @@ const second = (input: string) => {
 
 const expectedSecondSolution = 'solution 2';
 
-export { first, expectedFirstSolution, second, expectedSecondSolution };
+export { expectedFirstSolution, expectedSecondSolution, first, second };

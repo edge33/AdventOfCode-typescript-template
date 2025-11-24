@@ -1,7 +1,7 @@
-import { readdirSync } from 'fs';
-import { describe, expect, it } from 'vitest';
-import readFile from './utils/readFile';
-import Puzzle from './types/Puzzle';
+import { readdirSync } from 'node:fs';
+import { describe, it, type TestContext } from 'node:test';
+import type { Puzzle } from './types/Puzzle.ts';
+import readFile from './utils/readFile.ts';
 
 describe('AoC test runner', () => {
   const dirs = readdirSync('./src/days', { withFileTypes: true })
@@ -9,14 +9,17 @@ describe('AoC test runner', () => {
     .map((dirent) => dirent.name);
 
   for (const day of dirs) {
-    it(`Tests day ${day}`, async () => {
+    it(`Tests day ${day}`, async (t: TestContext) => {
       let exampleOneInput = '';
       let exampleTwoInput = '';
       const puzzleName = day;
+
       try {
         const puzzlePath = `src/days/${puzzleName}`;
-        exampleOneInput = await readFile(`${puzzlePath}/example-test-1.txt`);
-        exampleTwoInput = await readFile(`${puzzlePath}/example-test-2.txt`);
+        [exampleOneInput, exampleTwoInput] = await Promise.all([
+          readFile(`${puzzlePath}/example-test-1.txt`),
+          readFile(`${puzzlePath}/example-test-2.txt`),
+        ]);
       } catch (error) {
         console.error(error);
         process.exit(1);
@@ -26,13 +29,16 @@ describe('AoC test runner', () => {
         expectedFirstSolution,
         second,
         expectedSecondSolution,
-      }: Puzzle = await import(`./days/${puzzleName}/Puzzle`);
+      }: Puzzle = await import(`./days/${puzzleName}/Puzzle.ts`);
 
-      expect(first(exampleOneInput).toString()).toBe(
+      t.assert.deepStrictEqual(
+        first(exampleOneInput).toString(),
         expectedFirstSolution.toString()
       );
-      expect(second(exampleTwoInput).toString()).toBe(
+      t.assert.deepStrictEqual(
+        second(exampleTwoInput).toString(),
         expectedSecondSolution.toString()
+      );
     });
   }
 });

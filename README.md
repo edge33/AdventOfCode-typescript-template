@@ -4,9 +4,9 @@ This is a TypeScript boilerplate for Advent of Code.
 
 built with ❤️ and:
 
-- [typescript](https://www.typescriptlang.org/) 👨‍💻
-- [vitest](https://vitest.dev/) 🧪
-- [bun](https://bun.sh/) 🧅
+- [Node.js 24](https://nodejs.org/en) 🟢
+- [Typescript](https://www.typescriptlang.org/) 👨‍💻
+- [Bun](https://bun.sh/) 🧅
 
 ## 👷‍♂️ Project structure
 
@@ -24,7 +24,7 @@ src
 
 This readme assumes you are using [pnpm](https://pnpm.io/) as package manager, but any other package manager will do.
 
-The runtime used for this project is bun [bun](https://bun.sh/), check the docs for installing it.
+This project is fully built in Typescript, you can run the code either with Node.js runtime or with [bun](https://bun.sh/), check the docs for installing it.
 
 install all required dependencies with `pnpm i`
 
@@ -61,11 +61,15 @@ export { first, expectedFirstSolution, second, expectedSecondSolution };
 
 ## 🔧 Development
 
-When your solution is ready, or when you want to start developing incrementally (watch mode) run `pnpm dev {day}` where {day} is the day you are working on, i.e. `pnpm dev 1` will run the puzzle class for day 1.
+When your solution is ready, or when you want to start developing incrementally (watch mode) run `pnpm start:dev {day}` where {day} is the day you are working on, i.e. `pnpm start:dev 1` will run the puzzle class for day 1.
 
 ## 🧪 Testing
 
 You can run test for all puzzles agains their expected output with `pnpm t` this will test all the solutions in the `days` folder
+
+## 🧅 Using Bun
+
+`dev`, `test` and `start` script have their `:bun` counterpart as in `start:bun` to use bun instead of `node`
 
 ## 🛫 Contributing
 

@@ -5,4 +5,4 @@ type Puzzle = {
   expectedSecondSolution: string;
 };
 
-export default Puzzle;
+export type { Puzzle };
